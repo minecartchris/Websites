@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Canvas Login</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+        canvas {
+            border: 1px solid black;
+        }
+        .form-container {
+            position: absolute;
+            text-align: center;
+            top: 50%;
+            transform: translateY(-50%);
+        }
+        input {
+            margin: 10px;
+            padding: 8px;
+            font-size: 16px;
+        }
+    </style>
+</head>
+<body>
+    <canvas id="loginCanvas" width="400" height="300"></canvas>
+
+    <div class="form-container">
+        <h2>Login</h2>
+        <form id="loginForm">
+            <input type="text" id="username" placeholder="Username" required><br>
+            <input type="password" id="password" placeholder="Password" required><br>
+            <input type="submit" value="Login">
+        </form>
+    </div>
+
+    <script>
+        // Draw something on canvas
+        const canvas = document.getElementById('loginCanvas');
+        const ctx = canvas.getContext('2d');
+
+        // Sample correct credentials
+        const correctUsername = 'user';
+        const correctPassword = '12345';
+
+        // Handle form submission
+        document.getElementById('loginForm').addEventListener('submit', function (event) {
+            event.preventDefault();
+
+            const username = document.getElementById('username').value;
+            const password = document.getElementById('password').value;
+
+            if (username === correctUsername && password === correctPassword) {
+                alert('Login successful! Redirecting...');
+                window.location.href = 'https://youtu.be/dQw4w9WgXcQ?si=wjZD7x0Blsd-aX-x'; // Redirect to another website
+            } else {
+                alert('Invalid username or password!');
+            }
+        });
+    </script>
+</body>
+</html>
