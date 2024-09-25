@@ -15,7 +15,6 @@
         .then(response => response.json())
         .then(data => {
             if (data.success) {
-                alert('Login successful! Redirecting...');
                 window.location.href = 'https://tinyurl.com/3tw2rxxa'; // Redirect to another website
             } else {
                 alert(data.message);
